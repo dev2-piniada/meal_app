@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textStyle: {
-    color: "white",
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "red",
   },
 });
