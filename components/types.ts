@@ -17,3 +17,7 @@ export interface IconButtonProps {
   color: string;
   onPress: () => void;
 }
+
+export interface MealListProps {
+  meals: Meal[];
+}

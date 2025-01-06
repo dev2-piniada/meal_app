@@ -6,10 +6,10 @@ import {
   Image,
   Platform,
 } from "react-native";
-import { MealItemProps } from "./types";
+import { MealItemProps } from "../types";
 import { useNavigation } from "@react-navigation/native";
-import MealDetailsScreen from "../screens/MealDetailsScreen";
-import MealDetail from "./MealDetail";
+import MealDetailsScreen from "../../screens/MealDetailsScreen";
+import MealDetail from "../MealDetail";
 
 const MealItem = (props: MealItemProps) => {
   const { mealItem } = props;

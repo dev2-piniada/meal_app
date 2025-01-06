@@ -3,7 +3,8 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { Meal } from "../models/types";
 import { CATEGORIES, MEALS } from "../data/types";
-import MealItem from "../components/MealItem";
+import MealItem from "../components/MealList/MealItem";
+import MealList from "../components/MealList/MealList";
 
 const MealOverviewScreen = () => {
   const [categoryId, setCategoryId] = useState<string | null>(null);
@@ -40,19 +41,7 @@ const MealOverviewScreen = () => {
     }
   }, [categoryId]);
 
-  const renderMealItem = (itemData: any) => {
-    return <MealItem mealItem={itemData.item} />;
-  };
-
-  return (
-    <View style={styles.container}>
-      <FlatList
-        data={displayedMeals}
-        renderItem={renderMealItem}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
-  );
+  return <MealList meals={displayedMeals} />;
 };
 
 export default MealOverviewScreen;
