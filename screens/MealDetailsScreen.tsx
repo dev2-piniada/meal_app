@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { MEALS } from "../data/types";
 import { Meal } from "../models/types";
 import MealDetail from "../components/MealDetail";
 import Subtitle from "../components/MealDetails/Subtitle";
 import List from "../components/MealDetails/List";
+import IconButton from "../components/IconButton";
 
 const MealDetailsScreen = () => {
   const [mealId, setMealId] = useState<string | null>(null);
@@ -14,12 +15,30 @@ const MealDetailsScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
 
+  const headerButtonPressHandler = () => {
+    console.log("Pressed!");
+  };
+
   useEffect(() => {
     if (route.params) {
       const { mealId } = route.params;
       setMealId(mealId);
     }
   }, [route]);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return (
+          <IconButton
+            icon="star"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
+        );
+      },
+    });
+  }, [navigation, headerButtonPressHandler]);
 
   useEffect(() => {
     if (mealId) {

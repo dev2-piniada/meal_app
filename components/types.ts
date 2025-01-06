@@ -11,3 +11,9 @@ export interface MealItemProps {
   style?: any;
   textStyle?: any;
 }
+
+export interface IconButtonProps {
+  icon: string;
+  color: string;
+  onPress: () => void;
+}

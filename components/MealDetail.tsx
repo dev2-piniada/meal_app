@@ -3,6 +3,7 @@ import { MealItemProps } from "./types";
 
 const MealDetail = (props: MealItemProps) => {
   const { mealItem, style, textStyle } = props;
+
   return (
     <View style={[styles.details, style]}>
       <Text style={[styles.detailItem, textStyle]}>{mealItem.duration}m</Text>
