@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 import { CATEGORIES } from "../data/types";
 import CategoryGridTitle from "../components/CategoryGridTitle";
 import { useNavigation } from "@react-navigation/native";
